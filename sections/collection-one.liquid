@@ -1,0 +1,177 @@
+
+
+<div class="collection collection1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="collection1__collection-item">
+              <div class="collection1__product-img">
+                  <div class="collection1__heart"><i class="far fa-heart"></i></div>
+                <img src="https://freepngimg.com/thumb/purse/35930-1-purse-transparent-image.png" />
+              </div>
+              <div class="collection1__product-info">
+                <div class="collection1__product-details">
+                  <span class="collection1__product-title">Purse</span>
+                  <span class="collection1__product-price">$3982</span>
+                </div>
+                <div class="collection1__colors">
+                  <div class="collection1__color collection1__color--brown"></div>
+                  <div class="collection1__color collection1__color--black"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="collection1__collection-item">
+              <div class="collection1__product-img">
+              <div class="collection1__heart"><i class="far fa-heart"></i></div>
+                <img src="https://lh3.googleusercontent.com/proxy/mSIzMAfYAexEn8IIi_PtDIxYSbUEPWCEHOFoLtAt5BZN0Q8GPxmp2haJlBnSqcjR662VXxufS_yIymqRFfc6YSFT3geSwulO1lyWaaOTk_b50pP0GRY185b7yJITj7dCYe-uwcLsLdaNrkkvZkvxUgbv" />
+              </div>
+              <div class="collection1__product-info">
+                <div class="collection1__product-details">
+                  <span class="collection1__product-title">Purse</span>
+                  <span class="collection1__product-price">$3982</span>
+                </div>
+                <div class="collection1__colors">
+                  <div class="collection1__color collection1__color--brown"></div>
+                  <div class="collection1__color collection1__color--black"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="collection1__collection-item">
+              <div class="collection1__product-img">
+              <div class="collection1__heart"><i class="far fa-heart"></i></div>
+                <img src="https://www.pngplay.com/wp-content/uploads/1/Louboutin-Heels-Transparent-Background.png" />
+              </div>
+              <div class="collection1__product-info">
+                <div class="collection1__product-details">
+                  <span class="collection1__product-title">Purse</span>
+                  <span class="collection1__product-price">$3982</span>
+                </div>
+                <div class="collection1__colors">
+                  <div class="collection1__color collection1__color--black"></div>
+                  <div class="collection1__color collection1__color--red"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% schema %}
+{
+  "name": "Collection Group",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-banner.settings.image.label"
+    },
+{
+    "type": "color",
+    "id": "overlay",
+    "label": "overlay color",
+    "default": "#000000"
+  },
+  {
+      "type": "range",
+      "id": "opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "opacity",
+      "default": 50
+  },
+  
+      {
+      "type": "select",
+      "id": "info_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "info alignment"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.image-banner.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.image-banner.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Give customers details about the banner image(s) or content on the template.",
+          "label": "t:sections.image-banner.blocks.text.settings.text.label"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.image-banner.blocks.buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Shop Now",
+          "label": "button text",
+          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Group ",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

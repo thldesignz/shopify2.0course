@@ -1,0 +1,134 @@
+
+
+
+
+<div class="hero hero2  ">
+  <div class="hero2__collection hero2--aligned-right">
+    {%- if section.settings.image != blank -%}
+      <img srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | img_url: '165x' }} 165w,{%- endif -%}
+      {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | img_url: '360x' }} 360w,{%- endif -%}
+      {%- if section.settings.image.width >= 535 -%}{{ section.settings.image | img_url: '535x' }} 535w,{%- endif -%}
+      {%- if section.settings.image.width >= 720 -%}{{ section.settings.image | img_url: '720x' }} 720w,{%- endif -%}
+      {%- if section.settings.image.width >= 940 -%}{{ section.settings.image | img_url: '940x' }} 940w,{%- endif -%}
+      {%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | img_url: '2000x' }} 2000w{%- endif -%}"
+      src="{{ section.settings.image | img_url: '940x' }}"
+      sizes="(min-width: 1100px) 2000px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+      alt="{{ section.settings.image.alt | escape }}"
+      loading="lazy"
+      width="{{ section.settings.image.width }}"
+      height="{{ section.settings.image.height }}" class="hero2__bg" />
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+      {% assign opacity = section.settings.opacity | divided_by: 100.00 %}
+      <div class="hero2__content-container " style="background-color: {{ section.settings.overlay | color_modify: 'alpha', opacity }};">
+          <div class="hero2__info">
+            <a {% if section.settings.button_link != blank %} href="{{ sectiom.settings.button_link }}" {% endif %}class="hero2__button" {% if section.settings.button_link == blank %} aria-disabled="true"{% endif %} {{ section.shopify_attributes }} >{{ section.settings.button_label | escape }}</a>
+          </div>
+      </div>
+  </div>
+  <div class="hero2__collection hero2--aligned-left">
+    {%- if section.settings.image_2 != blank -%}
+      <img srcset="{%- if section.settings.image_2.width >= 165 -%}{{ section.settings.image_2 | img_url: '165x' }} 165w,{%- endif -%}
+      {%- if section.settings.image_2.width >= 360 -%}{{ section.settings.image_2 | img_url: '360x' }} 360w,{%- endif -%}
+      {%- if section.settings.image_2.width >= 535 -%}{{ section.settings.image_2 | img_url: '535x' }} 535w,{%- endif -%}
+      {%- if section.settings.image_2.width >= 720 -%}{{ section.settings.image_2 | img_url: '720x' }} 720w,{%- endif -%}
+      {%- if section.settings.image_2.width >= 940 -%}{{ section.settings.image_2 | img_url: '940x' }} 940w,{%- endif -%}
+      {%- if section.settings.image_2.width >= 1070 -%}{{ section.settings.image_2 | img_url: '2000x' }} 2000w{%- endif -%}"
+      src="{{ section.settings.image_2 | img_url: '940x' }}"
+      sizes="(min-width: 1100px) 2000px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+      alt="{{ section.settings.image_2.alt | escape }}"
+      loading="lazy"
+      width="{{ section.settings.image_2.width }}"
+      height="{{ section.settings.image_2.height }}" class="hero2__bg" />
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+      {% assign opacity = section.settings.opacity_2 | divided_by: 100.00 %}
+      <div class="hero2__content-container" style="background-color: {{ section.settings.overlay_2 | color_modify: 'alpha', opacity }};">
+          <div class="hero2__info">
+
+              <a {% if section.settings.button_link_2 != blank %} href="{{ sectiom.settings.button_link_2 }}" {% endif %}class="hero2__button" {% if section.settings.button_link_2 == blank %} aria-disabled="true"{% endif %} {{ section.shopify_attributes }} >{{ section.settings.button_label_2 | escape }}</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Hero Two",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-banner.settings.image.label"
+    },
+{
+    "type": "color",
+    "id": "overlay",
+    "label": "overlay color",
+    "default": "#000000"
+  },
+  {
+      "type": "range",
+      "id": "opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "opacity",
+      "default": 50
+  },
+  {
+    "type": "text",
+    "id": "button_label",
+    "default": "Shop Now",
+    "label": "button text",
+    "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+  },
+  {
+    "type": "url",
+    "id": "button_link",
+    "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
+  },
+  {
+    "type": "image_picker",
+    "id": "image_2",
+    "label": "t:sections.image-banner.settings.image_2.label"
+  },
+{
+  "type": "color",
+  "id": "overlay_2",
+  "label": "overlay color",
+  "default": "#000000"
+},
+{
+    "type": "range",
+    "id": "opacity_2",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "label": "opacity",
+    "default": 50
+},
+{
+  "type": "text",
+  "id": "button_label_2",
+  "default": "Shop Now",
+  "label": "button text",
+  "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+},
+{
+  "type": "url",
+  "id": "button_link_2",
+  "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
+}
+  ]
+}
+{% endschema %}
